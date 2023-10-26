@@ -1,11 +1,19 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
 import replyIcon from "../assets/images/icon-reply.svg";
 import deleteIcon from "../assets/images/icon-delete.svg";
+import {
+    downVoteComment,
+    downVoteReply,
+    upVoteComment,
+    upVoteReply,
+} from "../features/user/userSlice";
 
 const Comments = () => {
     const { currentUser, comments } = useSelector((store) => store.user);
+
+    const dispatch = useDispatch();
 
     return (
         <main className="flex flex-col items-center h-[100dvh] md:h-screen justify-center max-w-2xl mx-auto">
@@ -17,13 +25,19 @@ const Comments = () => {
                             className="flex gap-5 p-4 mb-4 bg-white rounded-lg shadow-sm md:max-w-2xl text-lightGray"
                         >
                             <aside className="flex flex-col items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-moderateBlue bg-veryLightGray h-fit mx-auto">
-                                <button>
+                                <button
+                                    onClick={() => dispatch(upVoteComment(id))}
+                                >
                                     <img src={plusIcon} alt="upvote" />
                                 </button>
                                 <p className="w-4 text-sm text-center">
                                     {score}
                                 </p>
-                                <button>
+                                <button
+                                    onClick={() =>
+                                        dispatch(downVoteComment(id))
+                                    }
+                                >
                                     <img src={minusIcon} alt="downvote" />
                                 </button>
                             </aside>
@@ -59,13 +73,23 @@ const Comments = () => {
                                     className="flex self-end gap-5 p-4 mb-4 bg-white rounded-lg shadow-sm md:max-w-xl text-lightGray"
                                 >
                                     <aside className="flex flex-col items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-moderateBlue bg-veryLightGray h-fit mx-auto">
-                                        <button>
+                                        <button
+                                            onClick={() =>
+                                                dispatch(upVoteReply(reply.id))
+                                            }
+                                        >
                                             <img src={plusIcon} alt="upvote" />
                                         </button>
                                         <p className="w-4 text-sm text-center">
                                             {reply.score}
                                         </p>
-                                        <button>
+                                        <button
+                                            onClick={() =>
+                                                dispatch(
+                                                    downVoteReply(reply.id)
+                                                )
+                                            }
+                                        >
                                             <img
                                                 src={minusIcon}
                                                 alt="downvote"

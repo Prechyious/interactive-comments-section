@@ -1,8 +1,10 @@
+import Comments from "./components/Comments";
+
 const App = () => {
     return (
-        <div>
-            <h1>Hello From App</h1>
-        </div>
+        <>
+            <Comments />
+        </>
     );
 };
 

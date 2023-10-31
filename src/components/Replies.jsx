@@ -21,15 +21,12 @@ const Replies = ({
     const { modalOpen } = useSelector((store) => store.user);
     const dispatch = useDispatch();
     const [editedContent, setEditedContent] = useState(replies.content);
-    // console.log(editingReplyId);
 
     const handleEditContentChange = (value) => {
-        // Update local state if needed
         setEditedContent(value);
     };
 
     const handleSaveEdit = () => {
-        // Dispatch action to edit reply
         dispatch(
             editReply({
                 commentId: commentId,
@@ -37,7 +34,7 @@ const Replies = ({
                 content: editedContent,
             })
         );
-        // Stop editing
+
         dispatch(stopEditReply());
     };
     return (

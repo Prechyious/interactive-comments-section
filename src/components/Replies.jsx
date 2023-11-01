@@ -1,11 +1,6 @@
 import { FaPlus, FaMinus, FaTrash, FaPen, FaReply } from "react-icons/fa";
-import DeleteCommentModal from "./DeleteCommentModal";
-import { useDispatch, useSelector } from "react-redux";
-import {
-    editReply,
-    openModal,
-    stopEditReply,
-} from "../features/user/userSlice";
+import { useDispatch } from "react-redux";
+import { editReply, stopEditReply } from "../features/user/userSlice";
 import { useState } from "react";
 
 const Replies = ({
@@ -13,12 +8,12 @@ const Replies = ({
     currentUser,
     upVote,
     downVote,
-    deleteReply,
     startEditing,
     editingReplyId,
+    toggleReplyBox,
     commentId,
+    toggleDeleteModal,
 }) => {
-    const { modalOpen } = useSelector((store) => store.user);
     const dispatch = useDispatch();
     const [editedContent, setEditedContent] = useState(replies.content);
 
@@ -90,7 +85,7 @@ const Replies = ({
                         {currentUser.username === replies.user.username && (
                             <button
                                 className="flex items-center gap-1.5 text-softRed hover:text-paleRed duration-300 font-medium"
-                                onClick={() => dispatch(openModal())}
+                                onClick={toggleDeleteModal}
                             >
                                 <FaTrash size={13} />
                                 <p>Delete</p>
@@ -115,7 +110,7 @@ const Replies = ({
                 {editingReplyId === replies.id ? (
                     <div className="flex flex-col w-full gap-4">
                         <textarea
-                            className="w-full p-1.5 duration-300 border rounded-lg border-lightGray hover:border-moderateBlue bg-transparent focus:border focus:border-moderateBlue focus:outline-none text-darkBlue h-[5.5rem] md:h-16 placeholder:text-grayishBlue"
+                            className="textarea"
                             name="editComment"
                             id="editComment"
                             value={`@${replies.replyingTo}, ${editedContent}`}
@@ -140,7 +135,7 @@ const Replies = ({
                 )}
 
                 {/* Mobile */}
-                <div className="flex items-center justify-between md:hidden mt-2">
+                <div className="flex items-center justify-between mt-2 md:hidden">
                     <aside className="flex items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-lightGrayishBlue bg-veryLightGray h-fit">
                         <button
                             className="duration-300 hover:text-moderateBlue"
@@ -162,7 +157,7 @@ const Replies = ({
                         {currentUser.username === replies.user.username && (
                             <button
                                 className="flex items-center gap-1 md:gap-1.5 text-softRed hover:text-paleRed duration-300 font-medium disabled:text-paleRed"
-                                onClick={() => dispatch(openModal())}
+                                onClick={toggleDeleteModal}
                                 disabled={editingReplyId !== null}
                             >
                                 <FaTrash size={13} />
@@ -187,8 +182,6 @@ const Replies = ({
                     </div>
                 </div>
             </div>
-
-            {modalOpen && <DeleteCommentModal deleteReply={deleteReply} />}
         </article>
     );
 };

@@ -7,20 +7,30 @@ import {
     addReply,
     deleteReply,
     startEditReply,
+    deleteComment,
+    startEditComment,
+    openModal,
 } from "../features/user/userSlice";
 import { useState } from "react";
 import Comment from "../components/Comment";
 import Replies from "../components/Replies";
 import ReplyForm from "../components/ReplyForm";
+import DeleteCommentModal from "../components/DeleteCommentModal";
 
 const MainComponent = () => {
-    const { currentUser, comments, editingReplyId } = useSelector(
-        (store) => store.user
-    );
+    const {
+        currentUser,
+        comments,
+        editingReplyId,
+        editingCommentId,
+        modalOpen,
+    } = useSelector((store) => store.user);
 
     const [selectedReplyCommentId, setSelectedReplyCommentId] = useState(null);
     const [replyUser, setReplyUser] = useState("");
     const [replyContent, setReplyContent] = useState("");
+    const [deleteType, setDeleteType] = useState(null);
+    const [deleteId, setDeleteId] = useState(null);
 
     const dispatch = useDispatch();
 
@@ -47,6 +57,12 @@ const MainComponent = () => {
         setSelectedReplyCommentId(null);
     };
 
+    const toggleDeleteModal = (type, id) => {
+        setDeleteType(type);
+        setDeleteId(id);
+        dispatch(openModal());
+    };
+
     return (
         <>
             {comments.map((comment) => (
@@ -57,6 +73,14 @@ const MainComponent = () => {
                         toggleReplyBox={toggleReplyBox}
                         upVote={() => dispatch(upVoteComment(comment.id))}
                         downVote={() => dispatch(downVoteComment(comment.id))}
+                        currentUser={currentUser}
+                        toggleDeleteModal={() =>
+                            toggleDeleteModal("comment", comment.id)
+                        }
+                        editingCommentId={editingCommentId}
+                        startEditing={() =>
+                            dispatch(startEditComment(comment.id))
+                        }
                     />
 
                     {/* Replying Input */}
@@ -69,6 +93,9 @@ const MainComponent = () => {
                             replyContent={replyContent}
                             setReplyUser={setReplyUser}
                             setReplyContent={setReplyContent}
+                            startEditing={() =>
+                                dispatch(startEditReply(comment.id))
+                            }
                         />
                     )}
 
@@ -96,10 +123,26 @@ const MainComponent = () => {
                                     dispatch(startEditReply(reply.id))
                                 }
                                 commentId={comment.id}
+                                toggleReplyBox={toggleReplyBox}
+                                toggleDeleteModal={() =>
+                                    toggleDeleteModal("reply", {
+                                        commentId: comment.id,
+                                        replyId: reply.id,
+                                    })
+                                }
                             />
                         ))}
                 </section>
             ))}
+            {modalOpen && (
+                <DeleteCommentModal
+                    type={deleteType}
+                    deleteComment={() =>
+                        dispatch(deleteComment({ commentId: deleteId }))
+                    }
+                    deleteReply={() => dispatch(deleteReply(deleteId))}
+                />
+            )}
         </>
     );
 };

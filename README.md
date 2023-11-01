@@ -1,47 +1,50 @@
 # Frontend Mentor - Interactive comments section
 
-![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+-   [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
-
-**To do this challenge, you need a strong understanding of HTML, CSS and JavaScript.**
+## Overview
 
 ## The challenge
 
-Your challenge is to build out this interactive comments section and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+Build out this interactive comments section and get it looking as close to the design as possible.
 
 We provide the data in a local `data.json` file, so use that to populate the content on the first load. If you want to take it up a notch, feel free to build this as a full-stack CRUD application!
 
 Your users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Create, Read, Update, and Delete comments and replies
-- Upvote and downvote comments
-- **Bonus**: If you're building a purely front-end project, use `localStorage` to save the current state in the browser that persists when the browser is refreshed.
-- **Bonus**: Instead of using the `createdAt` strings from the `data.json` file, try using timestamps and dynamically track the time since the comment or reply was posted.
+-   View the optimal layout for the app depending on their device's screen size
+-   See hover states for all interactive elements on the page
+-   Create, Read, Update, and Delete comments and replies
+-   Upvote and downvote comments
+-   **Bonus**: If you're building a purely front-end project, use `localStorage` to save the current state in the browser that persists when the browser is refreshed.
+-   **Bonus**: Instead of using the `createdAt` strings from the `data.json` file, try using timestamps and dynamically track the time since the comment or reply was posted.
 
 Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
 
 ### Expected behaviour
 
-- First-level comments should be ordered by their score, whereas nested replies are ordered by time added.
-- Replying to a comment adds the new reply to the bottom of the nested replies within that comment.
-- A confirmation modal should pop up before a comment or reply is deleted.
-- Adding a new comment or reply uses the `currentUser` object from within the `data.json` file.
-- You can only edit or delete your own comments and replies.
+-   First-level comments should be ordered by their score, whereas nested replies are ordered by time added.
+-   Replying to a comment adds the new reply to the bottom of the nested replies within that comment.
+-   A confirmation modal should pop up before a comment or reply is deleted.
+-   Adding a new comment or reply uses the `currentUser` object from within the `data.json` file.
+-   You can only edit or delete your own comments and replies.
 
 ## Where to find everything
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
 
 If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
 
@@ -64,9 +67,9 @@ Feel free to use any workflow that you feel comfortable with. Below is a suggest
 
 As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+-   [GitHub Pages](https://pages.github.com/)
+-   [Vercel](https://vercel.com/)
+-   [Netlify](https://www.netlify.com/)
 
 You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
 
@@ -88,12 +91,12 @@ Remember, if you're looking for feedback on your solution, be sure to ask questi
 
 There are multiple places you can share your solution:
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
+1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community).
 2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
 3. Share your solution on other social channels like LinkedIn.
 4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
 
 The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
 

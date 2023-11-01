@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.textarea {
+    @apply w-full p-1.5 duration-300 border rounded-lg border-lightGray hover:border-moderateBlue bg-transparent focus:border focus:border-moderateBlue focus:outline-none text-darkBlue h-[5.5rem] md:h-20 placeholder:text-grayishBlue;
+}

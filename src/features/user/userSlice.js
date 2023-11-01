@@ -5,6 +5,7 @@ const initialState = {
     modalOpen: false,
     currentUser,
     comments,
+    editingCommentId: null,
     editingReplyId: null,
 };
 
@@ -77,6 +78,33 @@ const userSlice = createSlice({
             };
 
             state.comments.push(newComment);
+        },
+
+        // Edit Comment
+        startEditComment: (state, { payload }) => {
+            state.editingCommentId = payload;
+        },
+
+        stopEditComment: (state) => {
+            state.editingCommentId = null;
+        },
+
+        editComment: (state, { payload }) => {
+            const { commentId, content } = payload;
+            const comment = state.comments.find(
+                (comment) => comment.id === commentId
+            );
+            if (comment) {
+                comment.content = content;
+            }
+        },
+
+        // Delete Comment
+        deleteComment: (state, { payload }) => {
+            const { commentId } = payload;
+            state.comments = state.comments.filter(
+                (comment) => comment.id !== commentId
+            );
         },
 
         // Add Reply
@@ -166,5 +194,9 @@ export const {
     closeModal,
     startEditReply,
     stopEditReply,
+    startEditComment,
+    stopEditComment,
+    editComment,
+    deleteComment,
 } = userSlice.actions;
 export default userSlice.reducer;

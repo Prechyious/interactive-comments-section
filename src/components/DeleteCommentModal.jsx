@@ -1,12 +1,20 @@
-import { FaTimes } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { closeModal } from "../features/user/userSlice";
 
-const DeleteCommentModal = ({ deleteReply }) => {
+const DeleteCommentModal = ({ type, deleteComment, deleteReply }) => {
     const dispatch = useDispatch();
 
     const handleCloseModal = () => {
-        dispatch(dispatch(closeModal()));
+        dispatch(closeModal());
+    };
+
+    const handleDelete = () => {
+        if (type === "comment") {
+            deleteComment();
+        } else if (type === "reply") {
+            deleteReply();
+        }
+        handleCloseModal();
     };
 
     return (
@@ -33,7 +41,14 @@ const DeleteCommentModal = ({ deleteReply }) => {
                     </button>
                     <button
                         className="px-3.5 py-1 text-white uppercase rounded-lg bg-softRed hover:bg-paleRed duration-300 ease-in-out"
-                        onClick={deleteReply}
+                        onClick={() => {
+                            if (type === "comment") {
+                                deleteComment();
+                            } else if (type === "reply") {
+                                deleteReply();
+                            }
+                            handleCloseModal();
+                        }}
                     >
                         Yes, Delete
                     </button>

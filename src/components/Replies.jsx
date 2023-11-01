@@ -65,7 +65,7 @@ const Replies = ({
                                 currentUser.username ===
                                     replies.user.username && "mr-1"
                             }`}
-                            src={replies.user.image.webp}
+                            src={replies.user.image.png}
                             alt={replies.user.username}
                         />
                         <h1 className="font-medium text-darkBlue">

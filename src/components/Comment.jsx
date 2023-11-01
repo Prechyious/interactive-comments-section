@@ -1,10 +1,6 @@
 import { FaPlus, FaMinus, FaReply, FaTrash, FaPen } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import {
-    editComment,
-    openModal,
-    stopEditComment,
-} from "../features/user/userSlice";
+import { editComment, stopEditComment } from "../features/user/userSlice";
 import { useState } from "react";
 
 const Comment = ({
@@ -60,7 +56,7 @@ const Comment = ({
                     <div className="flex items-center gap-4">
                         <img
                             className="w-8 h-8"
-                            src={user.image.webp}
+                            src={user.image.png}
                             alt={user.username}
                         />
                         <h1 className="font-medium text-darkBlue">

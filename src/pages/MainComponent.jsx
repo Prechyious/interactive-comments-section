@@ -41,7 +41,7 @@ const MainComponent = () => {
         setReplyUser(username);
         setReplyContent(`@${username}, `);
     };
-    // console.log(comments);
+
     const submitReply = (content, commentId) => {
         dispatch(
             addReply({

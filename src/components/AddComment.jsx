@@ -32,7 +32,7 @@ const AddComment = () => {
             >
                 <img
                     className="hidden w-8 h-8 sm:block"
-                    src={currentUser.image.webp}
+                    src={currentUser.image.png}
                     alt={currentUser.username}
                 />
 
@@ -44,7 +44,7 @@ const AddComment = () => {
                     placeholder="Add a comment..."
                     onChange={(e) => setComment(e.target.value)}
                 ></textarea>
-                <button className="hidden px-4 py-2 text-white uppercase border-none rounded-lg sm:block bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline duration-300 ease-out">
+                <button className="hidden px-4 py-2 text-white uppercase duration-300 ease-out border-none rounded-lg sm:block bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline">
                     Send
                 </button>
 

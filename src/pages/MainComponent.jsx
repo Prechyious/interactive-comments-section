@@ -100,38 +100,47 @@ const MainComponent = () => {
                     )}
 
                     {/* Replies */}
-                    {comment.replies &&
-                        comment.replies.map((reply) => (
-                            <Replies
-                                key={reply.id}
-                                replies={reply}
-                                currentUser={currentUser}
-                                upVote={() => dispatch(upVoteReply(reply.id))}
-                                downVote={() =>
-                                    dispatch(downVoteReply(reply.id))
-                                }
-                                deleteReply={() =>
-                                    dispatch(
-                                        deleteReply({
-                                            commentId: comment.id,
-                                            replyId: reply.id,
-                                        })
-                                    )
-                                }
-                                editingReplyId={editingReplyId}
-                                startEditing={() =>
-                                    dispatch(startEditReply(reply.id))
-                                }
-                                commentId={comment.id}
-                                toggleReplyBox={toggleReplyBox}
-                                toggleDeleteModal={() =>
-                                    toggleDeleteModal("reply", {
-                                        commentId: comment.id,
-                                        replyId: reply.id,
-                                    })
-                                }
-                            />
-                        ))}
+                    <div className="flex md:justify-between">
+                        {comment.replies.length > 0 && (
+                            <div className="w-0.5 min-h-full md:mx-10 mb-4 bg-lightGray"></div>
+                        )}
+                        <div className="flex-1">
+                            {comment.replies &&
+                                comment.replies.map((reply) => (
+                                    <Replies
+                                        key={reply.id}
+                                        replies={reply}
+                                        currentUser={currentUser}
+                                        upVote={() =>
+                                            dispatch(upVoteReply(reply.id))
+                                        }
+                                        downVote={() =>
+                                            dispatch(downVoteReply(reply.id))
+                                        }
+                                        deleteReply={() =>
+                                            dispatch(
+                                                deleteReply({
+                                                    commentId: comment.id,
+                                                    replyId: reply.id,
+                                                })
+                                            )
+                                        }
+                                        editingReplyId={editingReplyId}
+                                        startEditing={() =>
+                                            dispatch(startEditReply(reply.id))
+                                        }
+                                        commentId={comment.id}
+                                        toggleReplyBox={toggleReplyBox}
+                                        toggleDeleteModal={() =>
+                                            toggleDeleteModal("reply", {
+                                                commentId: comment.id,
+                                                replyId: reply.id,
+                                            })
+                                        }
+                                    />
+                                ))}
+                        </div>
+                    </div>
                 </section>
             ))}
             {modalOpen && (

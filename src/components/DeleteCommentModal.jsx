@@ -19,7 +19,7 @@ const DeleteCommentModal = ({ type, deleteComment, deleteReply }) => {
 
     return (
         <div
-            className="fixed z-10 inset-0 flex items-center justify-center w-full h-[100svh] bg-black/30 transition-all duration-300 ease-in-out"
+            className="fixed z-10 inset-0 flex items-center justify-center w-full h-[100svh] bg-black/50 transition-all duration-300 ease-in-out"
             onClick={handleCloseModal}
         >
             <main className="flex flex-col max-w-[19rem] gap-4 p-5 mx-auto bg-white rounded-xl text-darkBlue h-fit">

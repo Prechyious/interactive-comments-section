@@ -46,7 +46,7 @@ const AddComment = () => {
                 ></textarea>
                 <button
                     className="hidden px-4 py-2 text-white uppercase duration-300 ease-out border-none rounded-lg sm:block bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline"
-                    aria-label="add new comment"
+                    aria-label="send comment"
                 >
                     Send
                 </button>

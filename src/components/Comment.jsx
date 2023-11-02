@@ -56,7 +56,7 @@ const Comment = ({
                     <div className="flex items-center gap-4">
                         <img
                             className="w-8 h-8"
-                            src={user.image.png}
+                            src={user.image.webp}
                             alt={user.username}
                         />
                         <h1 className="font-medium text-darkBlue">

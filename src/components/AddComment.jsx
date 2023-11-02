@@ -32,7 +32,7 @@ const AddComment = () => {
             >
                 <img
                     className="hidden w-8 h-8 sm:block"
-                    src={currentUser.image.png}
+                    src={currentUser.image.webp}
                     alt={currentUser.username}
                 />
 

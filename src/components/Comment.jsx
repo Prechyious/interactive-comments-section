@@ -126,7 +126,7 @@ const Comment = ({
 
                 {/* Mobile Design */}
                 <div className="flex items-center justify-between w-full">
-                    <aside className="flex gap-2.5 font-bold rounded-lg md:hidden py-1 px-2 bg-veryLightGray text-lightGrayishBlue">
+                    <div className="flex gap-2.5 font-bold rounded-lg md:hidden py-1 px-2 bg-veryLightGray text-lightGrayishBlue">
                         <button
                             className="duration-300 hover:text-moderateBlue"
                             onClick={upVote}
@@ -142,7 +142,7 @@ const Comment = ({
                         >
                             <FaMinus size={11} />
                         </button>
-                    </aside>
+                    </div>
 
                     <div className="inline-flex gap-3 md:gap-4 md:hidden">
                         {currentUser.username === user.username && (

@@ -34,10 +34,7 @@ const Replies = ({
     };
     return (
         <article className="px-5 flex float-right w-[95%] gap-5 p-4 mb-4 bg-white rounded-lg shadow-sm md:w-[36rem] text-lightGray">
-            <aside
-                id="votes sidebar"
-                className="hidden md:flex flex-col items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-lightGrayishBlue bg-veryLightGray h-fit mx-auto"
-            >
+            <aside className="hidden md:flex flex-col items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-lightGrayishBlue bg-veryLightGray h-fit mx-auto">
                 <button
                     className="duration-300 hover:text-moderateBlue"
                     onClick={upVote}
@@ -147,7 +144,7 @@ const Replies = ({
 
                 {/* Mobile */}
                 <div className="flex items-center justify-between mt-2 md:hidden">
-                    <aside className="flex items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-lightGrayishBlue bg-veryLightGray h-fit">
+                    <div className="flex items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-lightGrayishBlue bg-veryLightGray h-fit">
                         <button
                             className="duration-300 hover:text-moderateBlue"
                             onClick={upVote}
@@ -165,7 +162,7 @@ const Replies = ({
                         >
                             <FaMinus size={11} />
                         </button>
-                    </aside>
+                    </div>
                     <div className="inline-flex gap-3 md:gap-4">
                         {currentUser.username === replies.user.username && (
                             <button

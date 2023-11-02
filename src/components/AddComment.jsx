@@ -44,7 +44,10 @@ const AddComment = () => {
                     placeholder="Add a comment..."
                     onChange={(e) => setComment(e.target.value)}
                 ></textarea>
-                <button className="hidden px-4 py-2 text-white uppercase duration-300 ease-out border-none rounded-lg sm:block bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline">
+                <button
+                    className="hidden px-4 py-2 text-white uppercase duration-300 ease-out border-none rounded-lg sm:block bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline"
+                    aria-label="add new comment"
+                >
                     Send
                 </button>
 
@@ -54,7 +57,10 @@ const AddComment = () => {
                         src={currentUser.image.webp}
                         alt={currentUser.username}
                     />
-                    <button className="px-4 py-2 text-white uppercase border-none rounded-lg bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline">
+                    <button
+                        className="px-4 py-2 text-white uppercase border-none rounded-lg bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline"
+                        aria-label="add new comment"
+                    >
                         Send
                     </button>
                 </div>

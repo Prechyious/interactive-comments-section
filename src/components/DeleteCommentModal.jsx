@@ -36,6 +36,7 @@ const DeleteCommentModal = ({ type, deleteComment, deleteReply }) => {
                     <button
                         className="px-3.5 py-1 text-white uppercase bg-gray-600 hover:bg-gray-400 duration-300 ease-in-out rounded-lg"
                         onClick={handleCloseModal}
+                        aria-label="cancel delete comment"
                     >
                         No, Cancel
                     </button>
@@ -49,6 +50,7 @@ const DeleteCommentModal = ({ type, deleteComment, deleteReply }) => {
                             }
                             handleCloseModal();
                         }}
+                        aria-label="confirm delete comment"
                     >
                         Yes, Delete
                     </button>

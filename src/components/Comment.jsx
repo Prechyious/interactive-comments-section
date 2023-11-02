@@ -38,6 +38,7 @@ const Comment = ({
                 <button
                     className="duration-300 hover:text-moderateBlue"
                     onClick={upVote}
+                    aria-label="up-vote comment"
                 >
                     <FaPlus size={11} />
                 </button>
@@ -47,6 +48,7 @@ const Comment = ({
                 <button
                     className="duration-300 hover:text-moderateBlue"
                     onClick={downVote}
+                    aria-label="down-vote comment"
                 >
                     <FaMinus size={11} />
                 </button>

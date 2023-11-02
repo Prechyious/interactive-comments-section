@@ -38,6 +38,7 @@ const Replies = ({
                 <button
                     className="duration-300 hover:text-moderateBlue"
                     onClick={upVote}
+                    aria-label="up-vote comment"
                 >
                     <FaPlus size={11} />
                 </button>
@@ -47,6 +48,7 @@ const Replies = ({
                 <button
                     className="duration-300 hover:text-moderateBlue"
                     onClick={downVote}
+                    aria-label="down-vote comment"
                 >
                     <FaMinus size={11} />
                 </button>
@@ -86,6 +88,7 @@ const Replies = ({
                             <button
                                 className="flex items-center gap-1.5 text-softRed hover:text-paleRed duration-300 font-medium"
                                 onClick={toggleDeleteModal}
+                                aria-label="delete comment"
                             >
                                 <FaTrash size={13} />
                                 <p>Delete</p>
@@ -95,12 +98,16 @@ const Replies = ({
                             <button
                                 className="flex items-center gap-1.5 text-moderateBlue hover:text-lightGrayishBlue duration-300 font-medium"
                                 onClick={startEditing}
+                                aria-label="Edit comment"
                             >
                                 <FaPen size={14} />
                                 <p>Edit</p>
                             </button>
                         ) : (
-                            <button className="flex items-center gap-1.5 text-moderateBlue hover:text-lightGrayishBlue duration-300 font-medium">
+                            <button
+                                className="flex items-center gap-1.5 text-moderateBlue hover:text-lightGrayishBlue duration-300 font-medium"
+                                aria-label="reply comment"
+                            >
                                 <FaReply size={14} />
                                 <p>Reply</p>
                             </button>
@@ -121,6 +128,7 @@ const Replies = ({
                         <button
                             onClick={() => handleSaveEdit()}
                             className="hidden px-3 py-1.5 text-white uppercase border-none rounded-lg sm:block bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline self-end duration-300 ease-out"
+                            aria-label="update edited comment"
                         >
                             Update
                         </button>
@@ -140,6 +148,7 @@ const Replies = ({
                         <button
                             className="duration-300 hover:text-moderateBlue"
                             onClick={upVote}
+                            aria-label="up-vote comment"
                         >
                             <FaPlus size={11} />
                         </button>
@@ -149,6 +158,7 @@ const Replies = ({
                         <button
                             className="duration-300 hover:text-moderateBlue"
                             onClick={downVote}
+                            aria-label="down-vote comment"
                         >
                             <FaMinus size={11} />
                         </button>
@@ -159,6 +169,7 @@ const Replies = ({
                                 className="flex items-center gap-1 md:gap-1.5 text-softRed hover:text-paleRed duration-300 font-medium disabled:text-paleRed"
                                 onClick={toggleDeleteModal}
                                 disabled={editingReplyId !== null}
+                                aria-label="delete comment"
                             >
                                 <FaTrash size={13} />
                                 <p>Delete</p>
@@ -169,12 +180,16 @@ const Replies = ({
                                 className="flex items-center gap-1 md:gap-1.5 text-moderateBlue hover:text-lightGrayishBlue duration-300 font-medium disabled:text-lightGrayishBlue"
                                 onClick={startEditing}
                                 disabled={editingReplyId !== null}
+                                aria-label="edit comment"
                             >
                                 <FaPen size={14} />
                                 <p>Edit</p>
                             </button>
                         ) : (
-                            <button className="flex items-center gap-1 md:gap-1.5 text-moderateBlue hover:text-lightGrayishBlue duration-300 font-medium">
+                            <button
+                                className="flex items-center gap-1 md:gap-1.5 text-moderateBlue hover:text-lightGrayishBlue duration-300 font-medium"
+                                aria-label="reply comment"
+                            >
                                 <FaReply size={14} />
                                 <p>Reply</p>
                             </button>

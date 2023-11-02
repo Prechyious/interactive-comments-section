@@ -59,7 +59,7 @@ const AddComment = () => {
                     />
                     <button
                         className="px-4 py-2 text-white uppercase border-none rounded-lg bg-moderateBlue hover:bg-lightGrayishBlue focus:outline-offset-1 focus:outline"
-                        aria-label="add new comment"
+                        aria-label="send comment"
                     >
                         Send
                     </button>

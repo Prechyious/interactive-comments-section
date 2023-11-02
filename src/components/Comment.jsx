@@ -34,7 +34,7 @@ const Comment = ({
 
     return (
         <article className="flex w-full gap-5 p-4 mx-auto mb-4 bg-white rounded-lg shadow-sm md:px-5 text-lightGray">
-            <aside className="hidden md:flex flex-col items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-lightGrayishBlue bg-veryLightGray h-fit mx-auto">
+            <div className="hidden md:flex flex-col items-center gap-4 py-1.5 px-2 font-medium rounded-lg text-lightGrayishBlue bg-veryLightGray h-fit mx-auto">
                 <button
                     className="duration-300 hover:text-moderateBlue"
                     onClick={upVote}
@@ -52,7 +52,7 @@ const Comment = ({
                 >
                     <FaMinus size={11} />
                 </button>
-            </aside>
+            </div>
             <section className="flex-1">
                 <header className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-4">
